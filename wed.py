@@ -11,7 +11,18 @@
     body { font-family: 'Kanit', sans-serif; }
     .page-section { display: none; }
     .page-section.active { display: block; }
-    .fade-in { animation: fadeIn 0.3s ease-in-out; }
+    import streamlit as st
+st.markdown("""
+    <style>
+    .fade-in { 
+        animation: fadeIn 0.3s ease-in-out; 
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+""", unsafe_allow_html=True)
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
